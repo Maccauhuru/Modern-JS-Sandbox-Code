@@ -1,6 +1,6 @@
-let nums = [23,5,6,710,100];
-let arrStr = ['jack','ben','paul']
-let arr = new Array(2,5,6,-10,90);
+let nums = [23, 5, 6, 710, 100];
+let arrStr = ['jack', 'ben', 'paul']
+let arr = new Array(2, 5, 6, -10, 90);
 
 
 //Get array length
@@ -13,13 +13,16 @@ console.log(Array.isArray(arr));
 //find item in array
 console.log(arr.indexOf(-10));
 //Remove items using splice
-arr.splice(3,2)
+arr.splice(3, 2)
 //reverse array
+Array.reverse([3, 5, 6])
 //concat array
 
-console.log(arrStr.sort());
+console.log(arrStr.sort((x, y) => {
+    return x - y;
+}));
 
-function greaterThanHundred(num){
+function greaterThanHundred(num) {
     return num > 100;
 }
 //Array find method
