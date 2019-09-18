@@ -24,6 +24,7 @@ const form = document.querySelector('#task-form');
 const task = document.querySelector('#task');
 
 form.addEventListener('submit', (e) => {
+  const { value } = task;
   e.preventDefault();
   //check if local storage has something
   let tasks;
@@ -32,6 +33,11 @@ form.addEventListener('submit', (e) => {
   } else {
     tasks = JSON.parse(localStorage.getItem("todos"));
   }
-  tasks.push(task.value)
-  localStorage.setItem("todos", JSON.stringify(tasks))
+  tasks.push(value)
+  localStorage.setItem("todos", JSON.stringify(tasks));
+  value = ' ';
 });
+
+//In order to view the items they need to be parsed 
+const itemsTodo = JSON.parse(localStorage.getItem('todos'));
+itemsTodo.forEach(item => console.log(`${item}`));
